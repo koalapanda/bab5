@@ -1,11 +1,9 @@
 package daffa.bab5;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,12 +12,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button test;
+        Button btn = (Button)findViewById(R.id.open_activity_button);
         test = (Button) findViewById(R.id.btn);
 
-        test.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Toast.makeText(MainActivity.this,"Succes", Toast.LENGTH_LONG).show();
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, daffa.class));
             }
         });
 
